@@ -1,0 +1,171 @@
+@import url("https://fonts.googleapis.com/css2?family=Cinzel&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+ul,
+ol,
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+body {
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+header {
+  width: 200px;
+  height: 90vh;
+  background: #fff;
+  position: absolute;
+  left: 5vw;
+  top: 5vh;
+  padding: 40px 30px;
+  z-index: 2;
+}
+header ul {
+  margin-top: 40px;
+}
+header ul li {
+  padding: 10px 0;
+  display: flex;
+  flex-wrap: wrap;
+  align-content: center;
+}
+header ul li a {
+  width: 100%;
+  padding: 20px 0;
+  font-family: cinzel;
+  color: #111;
+}
+header ul li::after {
+  content: "";
+  display: block;
+  width: 30px;
+  height: 1px;
+  background: #aaa;
+}
+
+.sns {
+  position: absolute;
+  top: 5vh;
+  right: 5vw;
+  display: flex;
+  gap: 30px;
+  z-index: 2;
+}
+.sns a {
+  display: flex;
+  width: 34px;
+  height: 34px;
+  justify-content: center;
+  align-items: center;
+  font-size: 14px;
+  color: #fff;
+  border: 1px dashed #fff;
+}
+
+.phoneBox {
+  width: 450px;
+  height: 787px;
+  background: url(../img/bgPhone.png) no-repeat 0 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-90%, -50%);
+  z-index: 2;
+}
+.phoneBox .frame {
+  width: 250px;
+  height: 443px;
+  position: absolute;
+  top: 175px;
+  left: 98px;
+  overflow: hidden;
+}
+.phoneBox .frame ul {
+  width: 300%;
+  height: 100%;
+  display: flex;
+}
+.phoneBox .frame ul li {
+  width: 33.333%;
+}
+.phoneBox .prev,
+.phoneBox .next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.phoneBox .prev {
+  left: 0;
+}
+.phoneBox .next {
+  right: 0;
+}
+
+.txtBox {
+  width: 500px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(30%, -60%);
+  z-index: 2;
+}
+.txtBox .txt {
+  width: 100%;
+  height: 310px;
+  margin-bottom: 50px;
+  overflow: hidden;
+}
+.txtBox .txt ul {
+  width: 300%;
+  display: flex;
+}
+.txtBox .txt ul li {
+  width: 33.33333%;
+}
+
+.bg {
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.bg ul {
+  width: 300%;
+  height: 100%;
+  display: flex;
+}
+.bg ul li {
+  width: 33.333%;
+}
+.bg ul li img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.btn-wrap {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-140%);
+  bottom: 30px;
+}
+.btn-wrap button {
+  padding: 20px 30px;
+  color: #333;
+  font-size: 16px;
+}
+
+/*# sourceMappingURL=style.css.map */
