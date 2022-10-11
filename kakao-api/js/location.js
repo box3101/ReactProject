@@ -23,7 +23,7 @@ var map = new kakao.maps.Map(container, options); //지도 생성 및 객체 리
 var markerOptions = [{
     title: "본점",
     latlag: new kakao.maps.LatLng(37.507025, 126.7563481), //좌표
-    imgSrc: "../img/marker1.png", // 이미지 불러오기
+    imgSrc: "../marker1.png", // 이미지 불러오기
     imageSize: new kakao.maps.Size(232, 99), // 마커이미지의 크기입니다 
     imgPos: {
       offset: new kakao.maps.Point(116, 50)
@@ -33,7 +33,7 @@ var markerOptions = [{
   {
     title: "코엑스",
     latlag: new kakao.maps.LatLng(37.5116828, 127.059151), //좌표
-    imgSrc: "../img/marker2.png", // 이미지 불러오기
+    imgSrc: "../marker2.png", // 이미지 불러오기
     imageSize: new kakao.maps.Size(232, 99), // 마커이미지의 크기입니다 
     imgPos: {
       offset: new kakao.maps.Point(116, 50)
@@ -43,7 +43,7 @@ var markerOptions = [{
   {
     title: "이즈파크",
     latlag: new kakao.maps.LatLng(37.4723739, 126.8816525), //좌표
-    imgSrc: "../img/marker3.png", // 이미지 불러오기
+    imgSrc: "../marker3.png", // 이미지 불러오기
     imageSize: new kakao.maps.Size(232, 99), // 마커이미지의 크기입니다 
     imgPos: {
       offset: new kakao.maps.Point(116, 50)
