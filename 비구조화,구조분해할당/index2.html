@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>D
+    ocument</title>
+  <script>
+    /*
+     전개연산자
+    */
+    let arr = [1, 2, 3];
+    let arr2 = arr;
+    console.log(arr);
+    console.log(arr2);
+
+    arr[0] = 0;
+    console.log(arr[0]);
+
+    //값을 보면 arr2의 0인덱스를 변경한게 아님에도 불구하고 변경이됨
+    //why? 참조값을 복사했기 때문에 arr이 바뀌면 arr2도 따라서 바뀌게된다
+
+    //리액트는 불변성이 유지가되어야 한다.
+    //원본과는 상관없이 새로운 객체가 복사되어야 한다.
+
+    let arr = [1, 2, 3];
+    let arr2 = [...arr]; // 완전히 복사해서 새로운 객체가 된것
+
+    //배열에 추가할
+  </script>
+</head>
+
+<boy>
+
+</boy>
+
+/https://studiomeal.com/archives/197
