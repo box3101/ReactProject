@@ -10,27 +10,32 @@ let enableClick = true;
 // setinterval 변수 설정
 let setInTerVal;
 
-// 공통 기능 그룹핑
-const frames = [picList, txtList, bgList];
+// 공통 슬라이드 배열로 그룹핑
+const frames = [picList, txtList, bgList]
 
-// 가운데 프레임을 기점으로 양옆에 하나의 패널이 있어야함.
-for (const el of frames) el.style.marginLeft = "-100%";
+// 가운데 프레임을 기점으로 양옆에 하나의 패널이 있어야함. 마진 left -100%
+for (let el of frames) el.style.marginLeft = "-100%"
 
 // btn-next를 클릭하면
-btnNext.addEventListener("click", next);
+btnNext.addEventListener("click", e => {
+  next(e);
+});
+
 // btn-prev를 클릭하면
-btnPrev.addEventListener("click", prev);
+btnPrev.addEventListener("click", e => {
+  prev(e);
+});
 
 //prev 함수 분리
 function prev(e) {
-
-  // 만약에 enable 클릭값이 true가 아니면
+  // 만약에 enableClick값이 true가 아니면 return
   if (!enableClick) return;
-  // enable 클릭값을 false로 바꿈
+
+  // enableClick을 false로 바꿈
   enableClick = false;
 
   //공통 frames 반복
-  for (const el of frames) {
+  frames.forEach((el) => {
     new Anime(el, {
       // prop 설정
       prop: 'margin-left',
@@ -38,26 +43,26 @@ function prev(e) {
       value: '0%',
       duration: 500,
       callback: () => {
-        // 0% 모션의 끝날 찰나의 순간에 첫번째 걸 뜯어서 앞에다 붙힌다. 
-        el.prepend(el.lastElementChild);
+        // 0% 모션의 끝날 찰나의 순간에 마지막 걸 뜯어서 앞에다 붙힌다. 
+        el.prepend(el.querySelector("li:last-of-type"));
         // 초기값으로 -100% 돌린다.
         el.style.marginLeft = "-100%";
         // 모든 모션이 끝나면 enable 클릭값을 true로 바꿈
         enableClick = true;
       }
     });
-  }
+  });
 }
 
-//next 함수 분리
+// next 함수 분리
 function next(e) {
-  // 만약에 enable 클릭값이 true가 아니면
+  // 만약에 enableClick이 true가 아니면 return
   if (!enableClick) return;
-  // enable 클릭값을 false로 바꿈
+  // enableClick 값을 false로 바꿈
   enableClick = false;
 
   // 공통 frames 반복
-  for (const el of frames) {
+  frames.forEach((el) => {
     new Anime(el, {
       // prop 설정
       prop: 'margin-left',
@@ -65,15 +70,15 @@ function next(e) {
       value: '-200%',
       duration: 500,
       callback: () => {
-        // -200% 모션의 끝날 찰나의 순간에 첫번째 걸 뜯어서 뒤에다 붙힌다. 
-        el.append(el.firstElementChild);
+        // -200% 모션의 끝날 찰나의 순간에 첫번째 걸 뜯어서 뒤에다 붙힌다.
+        el.append(el.querySelector("li:first-of-type"));
         // 초기값으로 -100% 돌린다.
-        el.style.marginLeft = "-100%"
-        // 모든 모션이 끝나면 enable 클릭값을 true로 바꿈
+        el.style.marginLeft = "-100%";
+        // 모든 모션이 끝나면 enableClick 값을 true로 바꿈
         enableClick = true;
       }
     });
-  }
+  });
 }
 
 //play 버튼을 누르면
